@@ -80,6 +80,12 @@ performance issues as the object grows in size. For more details,
 check out this [blog
 post](https://datastation.multiprocess.io/blog/2021-07-15-writing-an-efficient-javascript-object-previewer.html).
 
+## Where did this come from?
+
+This library is used by the data IDE,
+[DataStation](https://github.com/multiprocessio/datastation), for
+showing previews of objects of arbitrary size.
+
 ## License
 
 Apache-2.0, see [./LICENSE.md](./LICENSE.md).
