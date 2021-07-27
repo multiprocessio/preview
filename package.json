@@ -1,5 +1,6 @@
 {
   "name": "preview",
+  "version": "0.1.0",
   "license": "Apache-2.0",
   "description": "A large-object previewer",
   "author": "Phil Eaton",

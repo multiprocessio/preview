@@ -1,9 +1,9 @@
 {
-    "compilerOptions": {
-	"declaration": true,
+  "compilerOptions": {
+    "declaration": true,
     "noImplicitAny": true,
-	"emitDeclarationOnly": true,
-	"outDir": "dist",
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
     "target": "esnext",
     "module": "commonjs",
     "skipLibCheck": true,

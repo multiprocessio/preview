@@ -1,10 +1,12 @@
 function unsafePreviewArray(obj, nKeys, nextNKeys, prefixChar, joinChar) {
   const keys = obj.slice(0, nKeys);
-  const childPreview = keys.map((o) => prefixChar + unsafePreview(o, nextNKeys));
+  const childPreview = keys.map(
+    (o) => prefixChar + unsafePreview(o, nextNKeys)
+  );
   if (obj.length > nKeys) {
-    childPreview.push(prefixChar + "...");
+    childPreview.push(prefixChar + '...');
   }
-  return ["[", childPreview.join("," + joinChar), "]"].join(joinChar);
+  return ['[', childPreview.join(',' + joinChar), ']'].join(joinChar);
 }
 function unsafePreviewObject(obj, nKeys, nextNKeys, prefixChar, joinChar) {
   const keys = Object.keys(obj);
@@ -13,35 +15,37 @@ function unsafePreviewObject(obj, nKeys, nextNKeys, prefixChar, joinChar) {
   const preview2 = [];
   firstKeys.forEach((k) => {
     const formattedKey = `"${k.replaceAll('"', '\\"')}"`;
-    preview2.push(prefixChar + formattedKey + ": " + unsafePreview(obj[k], nextNKeys));
+    preview2.push(
+      prefixChar + formattedKey + ': ' + unsafePreview(obj[k], nextNKeys)
+    );
   });
   if (keys.length > nKeys) {
-    preview2.push(prefixChar + "...");
+    preview2.push(prefixChar + '...');
   }
-  return ["{", preview2.join("," + joinChar), "}"].join(joinChar);
+  return ['{', preview2.join(',' + joinChar), '}'].join(joinChar);
 }
 function unsafePreview(obj, nKeys, topLevel = false) {
   if (!obj) {
     return String(obj);
   }
   const nextNKeys = nKeys < 1 ? 0 : Math.floor(nKeys * 0.6);
-  const joinChar = topLevel ? "\n" : " ";
-  const prefixChar = topLevel ? "  " : "";
+  const joinChar = topLevel ? '\n' : ' ';
+  const prefixChar = topLevel ? '  ' : '';
   if (Array.isArray(obj)) {
     return unsafePreviewArray(obj, nKeys, nextNKeys, prefixChar, joinChar);
   }
-  if (typeof obj === "object") {
+  if (typeof obj === 'object') {
     return unsafePreviewObject(obj, nKeys, nextNKeys, prefixChar, joinChar);
   }
   let stringMax = 200;
-  if (typeof obj === "string" && topLevel) {
+  if (typeof obj === 'string' && topLevel) {
     stringMax = 5e3;
   }
   let res = String(obj).slice(0, stringMax);
   if (String(obj).length > stringMax) {
-    res += "...";
+    res += '...';
   }
-  if (typeof obj === "string" && !topLevel) {
+  if (typeof obj === 'string' && !topLevel) {
     return `"${res.replaceAll('"', '\\"')}"`;
   }
   return res;
