@@ -19,7 +19,7 @@ display a small object but overwrite `preview`'s default number of
 results to show.
 
 ```javascript
-import preview from 'preview';
+import { preview } from 'preview';
 
 // The default is 20, so we make it smaller.
 const startingNumber = 2;
@@ -53,7 +53,7 @@ been skipped by the preview.
 Here is another example of a more complex object:
 
 ```
-import preview from 'preview';
+import { preview } from 'preview';
 
 const startingNumber = 4;
 console.log(preview(
