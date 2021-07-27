@@ -4,7 +4,8 @@
   "license": "Apache-2.0",
   "description": "A large-object previewer",
   "author": "Phil Eaton",
-  "main": "dist",
+  "main": "./dist/index.js",
+  "types": "./dist/preview.d.ts",
   "scripts": {
     "typecheck": "yarn tsc",
     "format": "yarn prettier --write \"**/*.js\" \"**/*.ts\" \"**/*.json\"",

@@ -1,6 +1,8 @@
 # Preview
 
-This library allows you to display large or small objects much more efficiently than
+This library helps showing snippets of large or small objects. It is
+particularly useful when trying to render snippets of very large
+objects.
 
 ## Install
 
@@ -10,9 +12,11 @@ $ yarn add https://github.com/multiprocessio/preview
 
 ## Examples
 
-Since displaying a very large object in an example is inconvenient,
-we'll display a small object but overwrite `preview`'s default number
-of results to show.
+While this library is a huge improvement on naive implementations like
+`JSON.stringify(x).slice(0, 1000)` for large objects (say 70,000
+elements), it's easier to show a small object in an example. So we'll
+display a small object but overwrite `preview`'s default number of
+results to show.
 
 ```javascript
 import preview from 'preview';
@@ -41,8 +45,8 @@ Here is the output of the above script:
 ]
 ```
 
-The `...` are what is actually printed out. They are only printed if
-elements have been omitted.
+Ellipsis are literally printed. They are only printed if elements have
+been skipped by the preview.
 
 ### Another example
 
@@ -69,22 +73,20 @@ And the result:
 }
 ```
 
-Here, ellipsis only happened in inner objects and not the outer object
-because no keys in the outer object were skipped. There were only four
-keys and the starting number of keys was four.
+Here, ellipsis only show up in the inner objects and not the outer
+object because no keys in the outer object were skipped. There were
+only four keys and the starting number of keys was four.
 
-## Why not slice JSON.stringify()?
+## Still confused?
 
-That works well for small objects! But you quickly run into
-performance issues as the object grows in size. For more details,
-check out this [blog
+For more details, check out this [blog
 post](https://datastation.multiprocess.io/blog/2021-07-15-writing-an-efficient-javascript-object-previewer.html).
 
 ## Where did this come from?
 
-This library is used by the data IDE,
-[DataStation](https://github.com/multiprocessio/datastation), for
-showing previews of objects of arbitrary size.
+This library is used by
+[DataStation](https://github.com/multiprocessio/datastation), an
+open-source data IDE, to show previews of objects of arbitrary size.
 
 ## License
 
