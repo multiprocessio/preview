@@ -10,15 +10,15 @@ function unsafePreviewObject(obj, nKeys, nextNKeys, prefixChar, joinChar) {
   const keys = Object.keys(obj);
   keys.sort();
   const firstKeys = keys.slice(0, nKeys);
-  const preview = [];
+  const preview2 = [];
   firstKeys.forEach((k) => {
     const formattedKey = `"${k.replaceAll('"', '\\"')}"`;
-    preview.push(prefixChar + formattedKey + ": " + unsafePreview(obj[k], nextNKeys));
+    preview2.push(prefixChar + formattedKey + ": " + unsafePreview(obj[k], nextNKeys));
   });
   if (keys.length > nKeys) {
-    preview.push(prefixChar + "...");
+    preview2.push(prefixChar + "...");
   }
-  return ["{", preview.join("," + joinChar), "}"].join(joinChar);
+  return ["{", preview2.join("," + joinChar), "}"].join(joinChar);
 }
 function unsafePreview(obj, nKeys, topLevel = false) {
   if (!obj) {
@@ -46,7 +46,7 @@ function unsafePreview(obj, nKeys, topLevel = false) {
   }
   return res;
 }
-export function previewObject(obj, nKeys = 20) {
+export function preview(obj, nKeys = 20) {
   try {
     return unsafePreview(obj, nKeys, true);
   } catch (e) {

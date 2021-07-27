@@ -1,14 +1,14 @@
-const { previewObject } = require('./preview');
+const { preview } = require('./preview');
 
-test('previewObject', () => {
-  expect(previewObject([{ foo: 1, bar: [2], blub: null }])).toBe(
+test('preview', () => {
+  expect(preview([{ foo: 1, bar: [2], blub: null }])).toBe(
     '[\n  { "bar": [ 2 ], "blub": null, "foo": 1 }\n]'
   );
 
-  expect(previewObject('foo')).toBe('foo');
+  expect(preview('foo')).toBe('foo');
 
   expect(
-    previewObject(
+    preview(
       [
         { a: 1, b: 3, c: 5 },
         { a: 12, b: 8, c: 5 },
@@ -19,7 +19,7 @@ test('previewObject', () => {
   ).toBe('[\n  { "a": 1, ... },\n  { "a": 12, ... },\n  ...\n]');
 
   expect(
-    previewObject(
+    preview(
       { a: 12, b: [1, 3, 4], c: null, d: { n: 'foo', m: 19, l: [12] } },
       4
     )

@@ -76,7 +76,7 @@ function unsafePreview(obj: any, nKeys: number, topLevel = false): string {
   return res;
 }
 
-export function previewObject(obj: any, nKeys = 20): string {
+export function preview(obj: any, nKeys = 20): string {
   try {
     return unsafePreview(obj, nKeys, true);
   } catch (e) {
