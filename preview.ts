@@ -27,7 +27,7 @@ function unsafePreviewObject(
   const firstKeys = keys.slice(0, nKeys);
   const preview: Array<any> = [];
   firstKeys.forEach((k) => {
-    const formattedKey = `"${k.replaceAll('"', '\\"')}"`;
+    const formattedKey = `"${k.split('"').join('\\"')}"`;
     preview.push(
       prefixChar + formattedKey + ': ' + unsafePreview(obj[k], nextNKeys)
     );
@@ -70,7 +70,7 @@ function unsafePreview(obj: any, nKeys: number, topLevel = false): string {
   }
 
   if (typeof obj === 'string' && !topLevel) {
-    return `"${res.replaceAll('"', '\\"')}"`;
+    return `"${res.split('"').join('\\"')}"`;
   }
 
   return res;
