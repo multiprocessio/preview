@@ -1,8 +1,8 @@
 {
-  "name": "preview",
-  "version": "0.2.2",
+  "name": "@multiprocess/preview",
+  "version": "0.2.3",
   "license": "Apache-2.0",
-  "description": "A large-object previewer",
+  "description": "A large-object previewer for JavaScript",
   "author": "Phil Eaton",
   "main": "./dist/index.js",
   "types": "./dist/preview.d.ts",
