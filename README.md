@@ -7,7 +7,7 @@ objects.
 ## Install
 
 ```bash
-$ yarn add https://github.com/multiprocessio/preview
+$ yarn add @multiprocess/preview
 ```
 
 ## Examples
