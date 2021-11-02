@@ -19,7 +19,7 @@ display a small object but overwrite `preview`'s default number of
 results to show.
 
 ```javascript
-import { preview } from 'preview';
+import { preview } from '@multiprocess/preview';
 
 // The default is 20, so we make it smaller.
 const startingNumber = 2;
