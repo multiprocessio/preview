@@ -77,16 +77,14 @@ Here, ellipsis only show up in the inner objects and not the outer
 object because no keys in the outer object were skipped. There were
 only four keys and the starting number of keys was four.
 
-## Still confused?
+## Internals
 
 For more details, check out this [blog
 post](https://datastation.multiprocess.io/blog/2021-07-15-writing-an-efficient-javascript-object-previewer.html).
 
-## Where did this come from?
+## Users
 
-This library is used by
-[DataStation](https://github.com/multiprocessio/datastation), an
-open-source data IDE, to show previews of objects of arbitrary size.
+* [DataStation](https://github.com/multiprocessio/datastation)
 
 ## License
 
