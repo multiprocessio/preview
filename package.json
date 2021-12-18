@@ -3,7 +3,7 @@
   "version": "0.2.3",
   "license": "Apache-2.0",
   "description": "A large-object previewer for JavaScript",
-  "author": "Phil Eaton",
+  "author": "Multiprocess Labs LLC",
   "main": "./dist/index.js",
   "types": "./dist/preview.d.ts",
   "scripts": {
